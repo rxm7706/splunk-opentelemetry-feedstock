@@ -7,8 +7,8 @@ context:
   python_min: '3.10'
   python_max: '4.0'
   python_test_max: '3.14'
-  opentelemetry_api_version: '1.39.1'
-  opentelemetry_instrumentation_version: '0.60b1'
+  opentelemetry_api_version: '1.41.0'
+  opentelemetry_instrumentation_version: '0.62b0'
 
 package:
   name: ${{ name|lower }}
@@ -36,9 +36,11 @@ requirements:
     - opentelemetry-exporter-otlp-proto-grpc ==${{ opentelemetry_api_version }}
     - opentelemetry-exporter-otlp-proto-http ==${{ opentelemetry_api_version }}
     - opentelemetry-instrumentation ==${{ opentelemetry_instrumentation_version }}
+    - opentelemetry-instrumentation-logging ==${{ opentelemetry_instrumentation_version }}
     - opentelemetry-instrumentation-system-metrics ==${{ opentelemetry_instrumentation_version }}
     - opentelemetry-semantic-conventions ==${{ opentelemetry_instrumentation_version }}
-    - protobuf >=6.31.1
+    - protobuf >=6.33.5
+    - wrapt >=1.0.0,<2.0.0
 
 tests:
   - python:
